@@ -15,8 +15,8 @@ export default class DropDown extends React.Component {
         countryData: []
     }
 
-    componentWillMount() {
-        axios.get('http://api.worldbank.org/v2/country?format=json')
+    componentDidMount() {
+        axios.get('https://api.worldbank.org/v2/country?format=json')
             .then(res => {
                 const countries = res.data[1]; /* Used 1 due to object structure - [0] contains header/total information */
 
@@ -30,7 +30,7 @@ export default class DropDown extends React.Component {
     storeChoice(e) {
         this.setState({ pickedCountry: e });
         // console.log(e) /* TODO: REMOVE */
-        axios.get('http://api.worldbank.org/v2/country/' + e + '/indicator/NY.GDP.MKTP.CD?format=json')
+        axios.get('https://api.worldbank.org/v2/country/' + e + '/indicator/NY.GDP.MKTP.CD?format=json')
             .then(res => {
                 const countryData = res.data[1]; /* Used 1 due to object structure - [0] contains header/total information */
 
