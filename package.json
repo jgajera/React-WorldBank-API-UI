@@ -1,4 +1,5 @@
 {
+  "homepage": "https://jgajera.github.io/React-WorldBank-API-UI/",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -39,7 +40,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://jgajera.github.io/React-WorldBank-API-UI/",
   "devDependencies": {
     "gh-pages": "^3.1.0"
   }
