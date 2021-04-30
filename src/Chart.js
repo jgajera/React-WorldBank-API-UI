@@ -1,54 +1,46 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import * as d3 from 'd3';
 
-import axios from 'axios';
+import './index.css';
+import { AreaChart, Area, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { autoType } from 'd3';
 
+function Chart(props) {
+  const { data } = props;
 
-const Chart = (props) => {
-    var currentChoiceId = props.message;
-    var countrydata;
-    var indicator;
-
-    axios.get('http://api.worldbank.org/v2/country/' + currentChoiceId + '/indicator/NY.GDP.MKTP.CD?format=json')
-    .then(res => {
-        countrydata = res.data[1]; /* Used 1 due to object structure - [0] contains header/total information */
-        // console.log(countrydata);
-        }
-    )
-
-    console.log(countrydata);
-
-
-
-    return(
-          <h2> {currentChoiceId} </h2>
-    );
+  return(
+    <div className="chart-draw" style={{ width: '80%', height: 300, margin: '0 auto' }}>
+        <ResponsiveContainer>
+            <AreaChart width={730} height={250} data={data}
+            margin={{ top: 10, right: 0, left: 50, bottom: 0 }}>
+                <defs>
+                    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#3fbbf3" stopOpacity={0.8}/>
+                    <stop offset="95%" stopColor="#3fbbf3" stopOpacity={0.15}/>
+                    </linearGradient>
+                </defs>
+                <XAxis                     
+                    label={{ value: "Year", position: 'bottom' }}
+                    reversed dataKey="date" />
+                <YAxis
+                    label={{ value: "GDP ($)", position: 'top', offset:20 }}
+                    tickFormatter={(value) => new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                    maximumFractionDigits: 0,
+                    }).format(value)}/>
+                <CartesianGrid strokeDasharray="3 3" />
+                <Tooltip formatter={(value) => new Intl.NumberFormat('en-US', {
+                    style: 'currency',
+                    currency: 'USD',
+                    maximumFractionDigits: 0,
+                    }).format(value)}/>
+                <Area type="monotone" dataKey="value"       
+                    stroke="#022d5b" fillOpacity={1} fill="url(#colorUv)" />
+            </AreaChart>
+        </ResponsiveContainer>
+    </div>
+  );
 }
 
-
 export default Chart;
-
-
-// export default class Chart extends React.Component {
-//     state = {
-//         pickedCountry: this.props.message,
-//         countrydata: []
-//     }
-
-//     componentDidMount() {
-//         axios.get('http://api.worldbank.org/v2/country/' + this.state.pickedCountry + '/indicator/NY.GDP.MKTP.CD?format=json')
-//         .then(res => {
-//             var countrydata = res.data[1]; /* Used 1 due to object structure - [0] contains header/total information */
-//             this.setState({ countrydata });
-//             console.log(countrydata)
-//             }
-//         )
-//     }
-
-//     render() {
-//         return (
-//             <div>
-//                 <h2> {this.state.pickedCountry} </h2>
-//             </div>
-//         )
-//     }
-// }
