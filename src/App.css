@@ -44,6 +44,7 @@
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 20px;
+  font-weight: 200;
 }
 
 .App-link {
@@ -66,4 +67,9 @@ p.explore-header {
 .dropdown-container {
   padding: 3%;
   background: #f1f1f1;
+}
+
+select.dropdown {
+  font-family: inherit;
+  font-size: 17px;
 }
