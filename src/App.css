@@ -55,13 +55,9 @@
   overflow: visible;
 }
 
-p.explore-header {
+h2.chart-header {
   font-size: 28px;
   font-weight: bold;
-}
-
-.chart-container {
-  padding-top: 35px;
 }
 
 .dropdown-container {
@@ -78,10 +74,47 @@ select.dropdown {
   font-size: 17px;
 }
 
+.section-container {
+  border-bottom: 3px solid #e8e8e8;
+  padding: 50px 0 65px;
+}
+
 .error-hide .error-msg {
   display: none;
 }
 
 .error-show .explore-header, .error-show .chart-draw {
   display: none;
+}
+
+p.error-msg {
+  font-size: 15px;
+  font-style: italic;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  grid-column-gap: 20px;
+}
+
+.grid .text {
+  padding: 20px;
+}
+
+.Ref.grid {
+  grid-template-columns: 1fr 30%;
+  grid-template-areas: "b a";
+}
+
+.Ref.grid .text {
+  grid-area: a;
+}
+
+a.indicator-btn {
+  padding: 7px 10px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
 }
