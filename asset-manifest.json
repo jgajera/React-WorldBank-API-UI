@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/React-WorldBank-API-UI/static/css/main.37200af9.chunk.css",
-    "main.js": "/React-WorldBank-API-UI/static/js/main.39fa415d.chunk.js",
-    "main.js.map": "/React-WorldBank-API-UI/static/js/main.39fa415d.chunk.js.map",
-    "runtime-main.js": "/React-WorldBank-API-UI/static/js/runtime-main.e8119360.js",
-    "runtime-main.js.map": "/React-WorldBank-API-UI/static/js/runtime-main.e8119360.js.map",
-    "static/js/2.ec19fb75.chunk.js": "/React-WorldBank-API-UI/static/js/2.ec19fb75.chunk.js",
-    "static/js/2.ec19fb75.chunk.js.map": "/React-WorldBank-API-UI/static/js/2.ec19fb75.chunk.js.map",
-    "static/js/3.4a2cd78e.chunk.js": "/React-WorldBank-API-UI/static/js/3.4a2cd78e.chunk.js",
-    "static/js/3.4a2cd78e.chunk.js.map": "/React-WorldBank-API-UI/static/js/3.4a2cd78e.chunk.js.map",
+    "main.css": "/React-WorldBank-API-UI/static/css/main.fc54732d.chunk.css",
+    "main.js": "/React-WorldBank-API-UI/static/js/main.f22ecbe3.chunk.js",
+    "main.js.map": "/React-WorldBank-API-UI/static/js/main.f22ecbe3.chunk.js.map",
+    "runtime-main.js": "/React-WorldBank-API-UI/static/js/runtime-main.acd15fec.js",
+    "runtime-main.js.map": "/React-WorldBank-API-UI/static/js/runtime-main.acd15fec.js.map",
+    "static/js/2.c54d98d1.chunk.js": "/React-WorldBank-API-UI/static/js/2.c54d98d1.chunk.js",
+    "static/js/2.c54d98d1.chunk.js.map": "/React-WorldBank-API-UI/static/js/2.c54d98d1.chunk.js.map",
+    "static/js/3.0429de8c.chunk.js": "/React-WorldBank-API-UI/static/js/3.0429de8c.chunk.js",
+    "static/js/3.0429de8c.chunk.js.map": "/React-WorldBank-API-UI/static/js/3.0429de8c.chunk.js.map",
     "index.html": "/React-WorldBank-API-UI/index.html",
-    "static/css/main.37200af9.chunk.css.map": "/React-WorldBank-API-UI/static/css/main.37200af9.chunk.css.map",
-    "static/js/2.ec19fb75.chunk.js.LICENSE.txt": "/React-WorldBank-API-UI/static/js/2.ec19fb75.chunk.js.LICENSE.txt",
+    "static/css/main.fc54732d.chunk.css.map": "/React-WorldBank-API-UI/static/css/main.fc54732d.chunk.css.map",
+    "static/js/2.c54d98d1.chunk.js.LICENSE.txt": "/React-WorldBank-API-UI/static/js/2.c54d98d1.chunk.js.LICENSE.txt",
     "static/media/logo.cc4315f9.svg": "/React-WorldBank-API-UI/static/media/logo.cc4315f9.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e8119360.js",
-    "static/js/2.ec19fb75.chunk.js",
-    "static/css/main.37200af9.chunk.css",
-    "static/js/main.39fa415d.chunk.js"
+    "static/js/runtime-main.acd15fec.js",
+    "static/js/2.c54d98d1.chunk.js",
+    "static/css/main.fc54732d.chunk.css",
+    "static/js/main.f22ecbe3.chunk.js"
   ]
 }
