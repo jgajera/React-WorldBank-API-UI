@@ -23,7 +23,7 @@
 .App-header {
   background-color: #022d5b;
   color: white;
-  text-align:left;
+  text-align: left;
   padding: 10px 20px;
 }
 
@@ -69,7 +69,19 @@ p.explore-header {
   background: #f1f1f1;
 }
 
+.dropdown-container p {
+  margin-top: 0;
+}
+
 select.dropdown {
   font-family: inherit;
   font-size: 17px;
+}
+
+.error-hide .error-msg {
+  display: none;
+}
+
+.error-show .explore-header, .error-show .chart-draw {
+  display: none;
 }

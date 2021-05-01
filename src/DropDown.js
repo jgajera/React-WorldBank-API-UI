@@ -11,15 +11,18 @@ export default class DropDown extends React.Component {
         countries: [],
         pickedCountryID: false, // set this to false to conditionally hide sections until user chooses country
         countryData: [],
-        indicator: ""
+        indicator: "",
+        errorCatch: false // set this to false to conditionally hide error message until API response comes back with success
     }
 
     componentDidMount() {
         axios.get('https://api.worldbank.org/v2/country?format=json')
             .then(res => {
                 const countries = res.data[1]; /* Used 1 due to object structure - [0] contains header/total information */
+                console.log(countries)             
 
-                var removeContinents = countries.filter(product => product.capitalCity !== "");
+                // remove continents disguised as countries and set state
+                var removeContinents = countries.filter(country => country.region.value !== "Aggregates");
                 this.setState({ countries : removeContinents});
 
                 // console.log(countries)             
@@ -28,56 +31,73 @@ export default class DropDown extends React.Component {
 
     storeChoice(e) {
         this.setState({ pickedCountryID: e });
-        if(e==="") {
-            console.log('error');
-        } else {
-            axios.get('https://api.worldbank.org/v2/country/' + e + '/indicator/NY.GDP.MKTP.CD?format=json')
-            .then(res => {
-                const countryData = res.data[1]; // [0] contains header/total information
-                this.setState({ pickedCountry: countryData[0].country.value });
+        this.setState({ errorCatch : false});
+        // if(e!=="") {
+        //     axios.get('https://api.worldbank.org/v2/country/' + e + '/indicator/DT.ODA.ALLD.CD?format=json')
+        //     .then(res => {
+        //         const countryData = res.data[1]; // [0] contains header/total information
+        //         this.setState({ pickedCountryID: countryData[0].country.value });
 
-                // remove entries that have no value and set state
-                var removeEmptyYears = countryData.filter(product => product.value !== null);
-                this.setState({ countryData : removeEmptyYears});
+        //         // remove entries that have no value and set state
+        //         var removeEmptyYears = countryData.filter(product => product.value !== null);
+        //         this.setState({ countryData : removeEmptyYears});
                 
-                // console.log(this.state.countryData);
-                var indictor = this.state.countryData[0].indicator.value;
-                this.setState({ indicator : indictor});
-                }
-            )
-        }
+        //         console.log(this.state.countryData);
+
+        //         // get indicator for chart title and set state
+        //         var indictor = this.state.countryData[0].indicator.value;
+        //         this.setState({ indicator : indictor});
+        //         }
+        //     )
+        //     .catch(error => this.setState({ errorCatch : true}));
+        // }
     }
 
     render() {     
-        var countryName=this.state.pickedCountry;
+        var countryName = this.state.pickedCountry;
         var indicator = this.state.indicator;
+        var countryData = this.state.countryData;
+        var countrySet = this.state.pickedCountryID;
+        var errorSet = this.state.errorCatch;
 
         return (
             <div>
                 <div className="dropdown-container">
-                    { this.state.pickedCountryID ? 
-                    <p>Pick another country:</p>
-                    : <p>Pick a country to start:</p> }
+                    { countrySet ? 
+                        <p>Pick another country:</p>
+                        : <p>Pick a country to start:</p> }
 
-                    <select className="dropdown" name="dropdown" defaultValue={'none'} onChange={(event)=>this.storeChoice(event.target.value)}>
-                        <option value="none" disabled hidden></option>
+                    <select
+                        className="dropdown"
+                        name="dropdown"
+                        defaultValue={'none'}
+                        onChange={(event)=>this.storeChoice(event.target.value)}>
+
+                        <option
+                            value="none"
+                            disabled
+                            hidden>
+                        </option>
+
                         { this.state.countries.map(country =>
                             <option
                                 key={country.name}
                                 value={country.id}>
-                            {country.name}
+                                {country.name}
                             </option>)
                         }
                     </select>
                 </div>
                 <div className="chart-container">
-                    { this.state.pickedCountryID ? 
-                    <p className="explore-header">{countryName}'s {indicator}</p>
-                    : null }
-
-
-                    { this.state.pickedCountryID ?
-                    <Chart data={this.state.countryData}></Chart>
+                    { countrySet ?
+                        <Chart
+                            country={countryName}
+                            countryID={countrySet}
+                            indicator = {indicator}
+                            data={countryData}
+                            error={ errorSet ? 
+                                "error-show" : "error-hide" }>
+                        </Chart>
                     : null }
                 </div>
             </div>
