@@ -6,22 +6,22 @@ import { AreaChart, Area, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
 
 function Chart(props) {
   const { xAxis, yAxis, detail, url, countryName, countryID, indicator, data, error} = props;
-  console.log(props.indicator.substring(0,3))
+//   console.log(props.indicator.substring(0,3))
 
   return(
     <div className="section-container">
-        <div className={props.error}>
-            <div className={props.indicator.substring(0,3) + " grid"}>
+        <div className={error}>
+            <div className={indicator.substring(0,3) + " grid"}>
                 <div className="text">
-                    <h2 className="">{props.indicator}</h2>
-                    <p>{props.detail}</p>
-                    <a className="indicator-btn" href={props.url}>More details &#10230;</a>
+                    <h2 className="">{indicator}</h2>
+                    <p>{detail}</p>
+                    <a className="indicator-btn" href={url}>More details &#10230;</a>
                 </div>
 
                 <div className="chart">
-                    <h2 className="chart-header">{props.countryName}</h2>
+                    <h2 className="chart-header">{countryName}</h2>
                     
-                    <p className="error-msg">No data was taken in {props.countryName} for <span>{props.indicator}</span>.</p>
+                    <p className="error-msg">No data was taken in {countryName} for <span>{indicator}</span>.</p>
 
                     <div className="chart-draw" style={{ width: '80%', height: 300, margin: '0 auto' }}>
                         <ResponsiveContainer>

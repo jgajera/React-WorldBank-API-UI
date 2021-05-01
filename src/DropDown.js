@@ -3,6 +3,7 @@ import React from 'react';
 import axios from 'axios';
 
 import Chart from './Chart.js';
+
 // import { getDefaultNormalizer } from '@testing-library/dom';
 
 import Callout from './Callout.js';
@@ -86,10 +87,10 @@ export default class DropDown extends React.Component {
             axios.get('https://api.worldbank.org/v2/country/' + e + '/indicator/SP.POP.TOTL?format=json')
             .then(res => {
                 const countryData = res.data[1]; // [0] contains header/total information
-                console.log(countryData)
 
                 // remove entries that have no value and set state
                 const removeEmptyYears = countryData.filter(product => product.value !== null);
+                console.log(removeEmptyYears[0].value)
 
                 this.setState({ countryData3 : removeEmptyYears[0].value});
                 // get indicator for chart title and set state
@@ -155,47 +156,44 @@ export default class DropDown extends React.Component {
                 <div className="chart-container">
                     { countrySet ?
                         <Chart
-                        chartType = "AreaChart"
                         xAxis="GDP ($)"
                         yAxis="Year"
                         detail={detail1}
                         url={url1}
                         countryName={countryName}
-                        countryID={countrySet}
                         indicator = {indicator}
                         data={countryData}
                         error={ errorSet ? 
                             "error-show" : "error-hide" }>
-                    </Chart>
-                : null }
+                        </Chart>
+                    : null }
 
                     { countrySet ?
                         <Callout
+                        xAxis=""
                         url={url3}
                         countryName={countryName}
                         indicator = {indicator3}
                         data={countryData3}
                         error={ errorSet3 ? 
-                            "error-show" : "error-hide" }>
-                    </Callout>
-                : null }
+                            "error-hide" : "error-show" }>
+                        </Callout>
+                    : null }
 
 
                     { countrySet ?
                         <Chart
-                        chartType = "BarChart"
                         xAxis="Number of Refugees ($)"
                         yAxis="Year"
                         detail={detail2}
                         url={url2}
                         countryName={countryName}
-                        countryID={countrySet}
                         indicator = {indicator2}
                         data={countryData2}
                         error={ errorSet2 ? 
                             "error-show" : "error-hide" }>
-                    </Chart>
-                : null }
+                        </Chart>
+                    : null }
                 </div>
             </div>
         )
