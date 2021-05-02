@@ -10,8 +10,8 @@ function App() {
     <div className="App">
       <Header />
       <DropDown>
-        {/* <LineChart /> */}
-        {/* <BarChartGraph /> */}
+        <LineChart />
+        <BarChartGraph />
       </DropDown>
     </div>
   );
