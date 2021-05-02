@@ -1,7 +1,8 @@
 import './App.css';
 import React from 'react';
 import DropDown from './DropDown.js';
-import Chart from './Chart.js';
+import LineChart from './LineChart.js';
+import BarChartGraph from './BarChartGraph.js';
 import Header from './Header.js';
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
     <div className="App">
       <Header />
       <DropDown>
-        <Chart />
+        {/* <LineChart /> */}
+        {/* <BarChartGraph /> */}
       </DropDown>
     </div>
   );
