@@ -156,3 +156,20 @@ p.error-msg {
   font-size: 15px;
   font-style: italic;
 }
+
+/*
+  END ERROR CSS
+*/
+
+/*
+  START MEDIA QUERIES
+*/
+
+@media only screen and (max-width:450px) {
+  .section-container:nth-child(2) .grid, .section-container .grid, .header {
+    grid-template-columns: 100%;
+    grid-template-areas:
+        "a"
+        "b";
+  }
+}
