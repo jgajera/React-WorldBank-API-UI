@@ -186,4 +186,8 @@ p.error-msg {
         "a"
         "b";
   }
+  
+  .grid .chart {
+    padding: 15% 0;
+  }
 }
