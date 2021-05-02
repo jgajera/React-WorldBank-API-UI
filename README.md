@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It charts out three sections of World Development Indicators from WorldBank data using their [https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api-documentation](public API).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It charts out three sections of World Development Indicators from WorldBank data using their [public API](https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api-documentation).
 
 View the app here: [https://jgajera.github.io/React-WorldBank-API-UI/](https://jgajera.github.io/React-WorldBank-API-UI/)
 
