@@ -1,30 +1,29 @@
 import React from 'react';
 
 import './index.css';
-import { AreaChart, Area, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 
 function LineChart(props) {
-  const { xAxis, yAxis, detail, url, countryName, indicator, data, error} = props;
+  const { detail, url, countryName, indicator, data, error} = props;
 
   return(
     <div className="section-container">
         <div className={error}>
-            <div className={indicator.substring(0,3) + " grid"}>
+            <div className="grid">
                 <div className="text">
+                    <h2 className="chart-header">{countryName}</h2>
                     <h2 className="">{indicator}</h2>
                     <p>{detail}</p>
-                    <a className="indicator-btn" href={url}>More details &#10230;</a>
+                    <a className="indicator-btn" target="_blank" href={url}>More details &#10230;</a>
                 </div>
 
-                <div className="chart">
-                    <h2 className="chart-header">{countryName}</h2>
-                    
+                <div className="chart">                    
                     <p className="error-msg">No data was taken in {countryName} for <span>{indicator}</span>.</p>
 
-                    <div className="chart-draw" style={{ width: '80%', height: 300, margin: '0 auto' }}>
+                    <div className={error+" chart-draw"} style={{ width: '80%', height: 300, margin: '0 auto' }}>
                         <ResponsiveContainer width="100%" height={300}>
-                            <AreaChart width={730} height={250} data={data}
+                            <AreaChart width={730} height={300} data={data}
                             margin={{ top: 10, right: 0, left: 20, bottom: 0 }}>
                                 <defs>
                                     <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
