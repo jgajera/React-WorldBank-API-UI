@@ -21,9 +21,9 @@ function LineChart(props) {
                 <div className="chart">                    
                     <p className="error-msg">No data was taken in {countryName} for <span>{indicator}</span>.</p>
 
-                    <div className={error+" chart-draw"} style={{ width: '80%', height: 300, margin: '0 auto' }}>
-                        <ResponsiveContainer width="100%" height={300}>
-                            <AreaChart width={730} height={300} data={data}
+                    <div className={error+" chart-draw"} style={{ width: '85%', height: 400, margin: '0 auto'}}>
+                        <ResponsiveContainer width="100%" height={400}>
+                            <AreaChart width={730} height={400} data={data}
                             margin={{ top: 10, right: 0, left: 20, bottom: 0 }}>
                                 <defs>
                                     <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">

@@ -30,17 +30,17 @@ function DropDown() {
     // indicators and descriptions for indicators
     const indicators = [
         'NY.GDP.MKTP.CD',
-        'SM.POP.REFG',
-        'CM.MKT.TRNR'
+        'EN.ATM.CO2E.PC',
+        'SL.GDP.PCAP.EM.KD'
     ];
     const detail1 = "GDP at purchaser's prices is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products.";
     const url1 = "https://datatopics.worldbank.org/world-development-indicators/themes/economy.html";
 
-    const detail2 = "Refugees are people who are recognized as refugees under the 1951 Convention Relating to the Status of Refugees or its 1967 Protocol, the 1969 Organization of African Unity Convention Governing the Specific Aspects of Refugee Problems in Africa, people recognized as refugees in accordance with the UNHCR statute, people granted refugee-like humanitarian status, and people provided temporary protection.";
-    const url2 = "https://datatopics.worldbank.org/world-development-indicators/themes/global-links.html";
+    const detail2 = "Carbon dioxide emissions are those stemming from the burning of fossil fuels and the manufacture of cement. They include carbon dioxide produced during consumption of solid, liquid, and gas fuels and gas flaring.";
+    const url2 = "https://datatopics.worldbank.org/world-development-indicators/themes/environment.html";
 
-    const detail3 = "Turnover ratio is the value of domestic shares traded divided by their market capitalization. The value is annualized by multiplying the monthly average by 12.";
-    const url3 = "https://datatopics.worldbank.org/world-development-indicators/themes/states-and-markets.html";
+    const detail3 = "GDP per person employed is gross domestic product (GDP) divided by total employment in the economy. Purchasing power parity (PPP) GDP is GDP converted to 2011 constant international dollars using PPP rates.";
+    const url3 = "https://datatopics.worldbank.org/world-development-indicators/themes/economy.html";
 
 
     // when component is about to mount, fetch the full country list
@@ -98,7 +98,8 @@ function DropDown() {
         getCleanData(setCountryData3, setIndicator3, setError3, indicators[2]);
     };
 
-
+    console.log(countryData2);
+    
     return (
         <div>
             <div className="dropdown-container">
