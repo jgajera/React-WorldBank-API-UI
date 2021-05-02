@@ -97,8 +97,6 @@ function DropDown() {
         getCleanData(setCountryData2, setIndicator2, setError2, indicators[1]);
         getCleanData(setCountryData3, setIndicator3, setError3, indicators[2]);
     };
-
-    console.log(countryData2);
     
     return (
         <div>
