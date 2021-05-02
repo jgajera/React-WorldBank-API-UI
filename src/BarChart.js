@@ -14,7 +14,7 @@ function BarChartGraph(props) {
                     <h2 className="chart-header">{countryName}</h2>
                     <h2>{indicator}</h2>
                     <p>{detail}</p>
-                    <a className="indicator-btn" target="_blank" href={url}>More details &#10230;</a>
+                    <a className="indicator-btn" target="_blank" href={url} rel="noreferrer">More details &#10230;</a>
                 </div>
 
                 <div className="chart">                    
@@ -24,15 +24,17 @@ function BarChartGraph(props) {
                         <ResponsiveContainer width="100%" height={400}>
                             <BarChart width={730} height={650} data={data}>
                             <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="name" />
+                            <XAxis dataKey="date" />
                             <YAxis
                                     // label={{ value: , position: 'top', offset:20 }}
                                     tickFormatter={(value) => new Intl.NumberFormat('en-US', {
                                     maximumFractionDigits: 0,
                                     }).format(value)}/>
-                            <Tooltip />
+                            <Tooltip formatter={(value) => new Intl.NumberFormat('en-US', {
+                                    maximumFractionDigits: 0,
+                                    }).format(value)}/>
                             {/* <Legend /> */}
-                            <Bar dataKey="value" fill="#8884d8" />
+                            <Bar animationDuration={1750} dataKey="value" fill="#022d5b" />
                             </BarChart>
                         </ResponsiveContainer>
                     </div>

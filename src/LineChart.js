@@ -15,7 +15,7 @@ function LineChart(props) {
                     <h2 className="chart-header">{countryName}</h2>
                     <h2 className="">{indicator}</h2>
                     <p>{detail}</p>
-                    <a className="indicator-btn" target="_blank" href={url}>More details &#10230;</a>
+                    <a className="indicator-btn" target="_blank" href={url} rel="noreferrer">More details &#10230;</a>
                 </div>
 
                 <div className="chart">                    
@@ -53,7 +53,7 @@ function LineChart(props) {
                                     maximumFractionDigits: 0,
                                     }).format(value)}/>
 
-                                <Area type="monotone"      
+                                <Area animationDuration={1750} type="monotone"      
                                     dataKey="value"       
                                     stroke="#022d5b" fillOpacity={1} fill="url(#colorUv)" />
                             </AreaChart>

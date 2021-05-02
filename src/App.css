@@ -61,13 +61,19 @@
 */
 
 .dropdown-container {
-  padding: 3%;
+  padding: 2%;
   background: #f1f1f1;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
 }
 
 .dropdown-container p {
   margin-top: 0;
 }
+
+
 
 select.dropdown {
   font-family: inherit;
@@ -92,11 +98,6 @@ h2.chart-header {
 /*
   START CHART AREA CONTAINERS
 */
-
-.section-container {
-  border-bottom: 3px solid #e8e8e8;
-  padding: 50px 0 65px;
-}
 
 .grid {
   display: grid;
@@ -135,6 +136,23 @@ a.indicator-btn:hover {
   background: #022d5b;
   transition: 0.5s background;
 }
+
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.section-container {
+  border-bottom: 3px solid #e8e8e8;
+  padding: 50px 0 65px;
+  -webkit-animation: fadeIn 2s;
+  animation: fadeIn 2s;
+}
+
 
 /*
   END CHART AREA CONTAINERS
