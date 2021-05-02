@@ -1,11 +1,8 @@
-View the app here: [https://jgajera.github.io/React-WorldBank-API-UI/](https://jgajera.github.io/React-WorldBank-API-UI/)
-
-
-# Intro
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It charts out three sections of World Development Indicators from WorldBank data using their public API.
 
-## Available Scripts
+View the app here: [https://jgajera.github.io/React-WorldBank-API-UI/](https://jgajera.github.io/React-WorldBank-API-UI/)
+
+## Getting Started
 
 In the project directory, you can run:
 
