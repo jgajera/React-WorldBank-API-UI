@@ -14,6 +14,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+## Libraries used
+- `recharts` - a charting library built with d3 and react [link](https://github.com/recharts/recharts)
+- `axios` - a react library that makes fetching data easy [link](https://www.npmjs.com/package/axios)
+
 
 ## Learn More
 
