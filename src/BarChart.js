@@ -30,7 +30,9 @@ function BarChartGraph(props) {
                                     tickFormatter={(value) => new Intl.NumberFormat('en-US', {
                                     maximumFractionDigits: 0,
                                     }).format(value)}/>
-                            <Tooltip />
+                            <Tooltip formatter={(value) => new Intl.NumberFormat('en-US', {
+                                    maximumFractionDigits: 0,
+                                    }).format(value)}/>
                             {/* <Legend /> */}
                             <Bar dataKey="value" fill="#8884d8" />
                             </BarChart>
