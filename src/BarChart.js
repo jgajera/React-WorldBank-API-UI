@@ -25,7 +25,11 @@ function BarChartGraph(props) {
                             <BarChart width={730} height={650} data={data}>
                             <CartesianGrid strokeDasharray="3 3" />
                             <XAxis dataKey="name" />
-                            <YAxis />
+                            <YAxis
+                                    // label={{ value: , position: 'top', offset:20 }}
+                                    tickFormatter={(value) => new Intl.NumberFormat('en-US', {
+                                    maximumFractionDigits: 0,
+                                    }).format(value)}/>
                             <Tooltip />
                             {/* <Legend /> */}
                             <Bar dataKey="value" fill="#8884d8" />
