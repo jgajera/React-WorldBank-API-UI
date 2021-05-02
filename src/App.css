@@ -1,18 +1,23 @@
+/*
+  START UNIVERSAL
+*/
 .App {
   text-align: center;
 }
+
+/*
+  END UNIVERSAL
+*/
+
+/*
+  START HEADER
+*/
 
 .App-logo {
   width: 180px;
   pointer-events: none;
   margin: 0 auto;
 }
-
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
 
 .header {
   display: grid;
@@ -47,18 +52,13 @@
   font-weight: 200;
 }
 
-.App-link {
-  color: #61dafb;
-}
+/*
+  END HEADER
+*/
 
-.recharts-surface {
-  overflow: visible;
-}
-
-h2.chart-header {
-  font-size: 28px;
-  font-weight: bold;
-}
+/*
+  START DROPDOWN CONTAINER
+*/
 
 .dropdown-container {
   padding: 3%;
@@ -74,10 +74,75 @@ select.dropdown {
   font-size: 17px;
 }
 
+.recharts-surface {
+  overflow: visible;
+}
+
+h2.chart-header {
+  font-size: 21px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/*
+  END DROPDOWN CONTAINER
+*/
+
+/*
+  START CHART AREA CONTAINERS
+*/
+
 .section-container {
   border-bottom: 3px solid #e8e8e8;
   padding: 50px 0 65px;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  grid-column-gap: 20px;
+  padding: 0 5%;
+  align-items: center;
+}
+
+.grid .text {
+  padding: 20px;
+  background: #f8f8f8;
+}
+
+.section-container:nth-child(2) .grid {
+  grid-template-columns: 1fr 30%;
+  grid-template-areas: "b a";
+}
+
+.section-container:nth-child(2) .grid .text {
+  grid-area: a;
+}
+
+a.indicator-btn {
+  padding: 7px 10px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 15px 0;
+  transition: 0.5s background;
+}
+
+a.indicator-btn:hover {
+  background: #022d5b;
+  transition: 0.5s background;
+}
+
+/*
+  END CHART AREA CONTAINERS
+*/
+
+/*
+  START ERROR CSS
+*/
 
 .error-hide .error-msg {
   display: none;
@@ -92,29 +157,19 @@ p.error-msg {
   font-style: italic;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 30% 1fr;
-  grid-column-gap: 20px;
-}
+/*
+  END ERROR CSS
+*/
 
-.grid .text {
-  padding: 20px;
-}
+/*
+  START MEDIA QUERIES
+*/
 
-.Ref.grid {
-  grid-template-columns: 1fr 30%;
-  grid-template-areas: "b a";
-}
-
-.Ref.grid .text {
-  grid-area: a;
-}
-
-a.indicator-btn {
-  padding: 7px 10px;
-  background: black;
-  color: white;
-  text-decoration: none;
-  display: inline-block;
+@media only screen and (max-width:450px) {
+  .section-container:nth-child(2) .grid, .section-container .grid, .header {
+    grid-template-columns: 100%;
+    grid-template-areas:
+        "a"
+        "b";
+  }
 }
