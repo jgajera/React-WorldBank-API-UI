@@ -46,7 +46,7 @@ function DropDown() {
     // when component is about to mount, fetch the full country list
     // and store the list in the 'countries' state
     useEffect(() => {
-        axios.get('https://api.worldbank.org/v2/country?format=json')
+        axios.get('https://api.worldbank.org/v2/country?format=json&per_page=500')
             .then(res => {
                 const countryList = res.data[1]; /* Used 1 due to object structure - [0] contains header/total information */
 
@@ -71,7 +71,7 @@ function DropDown() {
         setError3(false);
 
         function getCleanData(setData, setIndicator, setError, APIURL) {
-            axios.get('https://api.worldbank.org/v2/country/' + e + '/indicator/' + APIURL + '?format=json')
+            axios.get('https://api.worldbank.org/v2/country/' + e + '/indicator/' + APIURL + '?format=json&per_page=500')
             .then(res => {
                 const countryData = res.data[1]; // [0] contains header/total information
                 
