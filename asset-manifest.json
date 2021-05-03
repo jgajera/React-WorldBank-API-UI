@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/React-WorldBank-API-UI/static/css/main.2de41eb2.chunk.css",
-    "main.js": "/React-WorldBank-API-UI/static/js/main.891802a1.chunk.js",
-    "main.js.map": "/React-WorldBank-API-UI/static/js/main.891802a1.chunk.js.map",
+    "main.js": "/React-WorldBank-API-UI/static/js/main.27f7f95b.chunk.js",
+    "main.js.map": "/React-WorldBank-API-UI/static/js/main.27f7f95b.chunk.js.map",
     "runtime-main.js": "/React-WorldBank-API-UI/static/js/runtime-main.0195bde3.js",
     "runtime-main.js.map": "/React-WorldBank-API-UI/static/js/runtime-main.0195bde3.js.map",
     "static/js/2.e04879d6.chunk.js": "/React-WorldBank-API-UI/static/js/2.e04879d6.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.0195bde3.js",
     "static/js/2.e04879d6.chunk.js",
     "static/css/main.2de41eb2.chunk.css",
-    "static/js/main.891802a1.chunk.js"
+    "static/js/main.27f7f95b.chunk.js"
   ]
 }
