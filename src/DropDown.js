@@ -51,9 +51,24 @@ function DropDown() {
                 const countryList = res.data[1]; /* Used 1 due to object structure - [0] contains header/total information */
 
                 // remove continents disguised as countries
-                var removeContinents = countryList.filter(country => country.region.value !== "Aggregates");
+                const removeContinents = countryList.filter(country => country.region.value !== "Aggregates");
                 
-                // and set state
+                // then sort the list of countries by name, not by their ID
+                removeContinents.sort(function(a, b) {
+                    var nameA = a.name; // ignore upper and lowercase
+                    var nameB = b.name; // ignore upper and lowercase
+                    if (nameA < nameB) {
+                      return -1;
+                    }
+                    if (nameA > nameB) {
+                      return 1;
+                    }
+                  
+                    // names must be equal
+                    return 0;
+                  });
+
+                  // and set state
                 setCountries(removeContinents);
             })
             .catch(error => console.log(error));
@@ -97,6 +112,7 @@ function DropDown() {
         getCleanData(setCountryData2, setIndicator2, setError2, indicators[1]);
         getCleanData(setCountryData3, setIndicator3, setError3, indicators[2]);
     };
+    
     
     return (
         <div>
