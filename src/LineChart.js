@@ -41,7 +41,7 @@ function LineChart(props) {
                                     tickFormatter={(value) => new Intl.NumberFormat('en-US', {
                                     style: 'currency',
                                     currency: 'USD',
-                                    maximumFractionDigits: 0,
+                                    maximumFractionDigits: 0, minimumFractionDigits: 0
                                     }).format(value)}/>
 
                                 <CartesianGrid  
@@ -50,7 +50,7 @@ function LineChart(props) {
                                 <Tooltip formatter={(value) => new Intl.NumberFormat('en-US', {
                                     style: 'currency',
                                     currency: 'USD',
-                                    maximumFractionDigits: 0,
+                                    maximumFractionDigits: 0, minimumFractionDigits: 0
                                     }).format(value)}/>
 
                                 <Area animationDuration={1750} type="monotone"      
