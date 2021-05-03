@@ -54,16 +54,16 @@ function DropDown() {
                 const removeContinents = countryList.filter(country => country.region.value !== "Aggregates");
                 
                 // then sort the list of countries by name, not by their ID
+                // taken from MDN docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
                 removeContinents.sort(function(a, b) {
-                    var nameA = a.name; // ignore upper and lowercase
-                    var nameB = b.name; // ignore upper and lowercase
+                    var nameA = a.name;
+                    var nameB = b.name;
                     if (nameA < nameB) {
                       return -1;
                     }
                     if (nameA > nameB) {
                       return 1;
                     }
-                  
                     // names must be equal
                     return 0;
                   });
